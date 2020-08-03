@@ -33,10 +33,9 @@
 <% Gossip.all.each do |gossip| %>
   <h3><%= gossip.title %></h3>
   <p><%= gossip.content %></p>
-  <p><%= link_to gossip.user.first_name, author_id_path %></p>
+  <p><%= link_to (gossip.user.first_name), profile_path(gossip.user.first_name)%></p>
   <p><%= gossip.created_at %></p>
 <% end %>
 
 </body>
 </html>
-<%= link_to "clique ici", le_fameux_path %>

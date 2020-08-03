@@ -25,11 +25,14 @@
     </div>
   </nav>
 
+  <div class="jumbotron">
+    <h1 class="display-4">The Gossip Project</h1>
+    <p class="lead">Plateforme de partage de potins générés aléatoirement pour l'instant.</p>
+  </div>
 
-  <h1>The Motherfucking Gossip Project</h1>
-  <p>Ceci est la page à propos de l'équipe qui a développé The Gossip Project. Yay !</p>
 
-  <div class="container">
+
+  <div class="container align-items-center text-center">
     <div class="row">
       <% Gossip.all.each do |gossip| %>
       <div class="card-deck m-3 text-center">
@@ -44,10 +47,10 @@
         </div>
       </div>
       <% end %>
-      </div>
     </div>
+  </div>
 
 
 
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title> <%= @author %> </title>
+  <title> <%= @a_gossip %> </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="/app/assets/stylesheets/application.css">
@@ -26,12 +26,10 @@
   </nav>
 
 
-    <h1> <%= @author.first_name %> <%= @author.last_name %> profile </h1>
-    <p> Age : <%= @author.age %> </p>
-    <p> Email address : <%= @author.email %></p>
-    <p> Description : <%= @author.description %></p>
-    <p> City : <%= City.find(@author.city_id).name %> <%= City.find(@author.city_id).zip_code %> </p>
-
+  <h1> <%= @a_gossip.title %> </h1>
+  <p> <%= @a_gossip.content %> </p>
+  <p> <%= @a_gossip.created_at %> </p>
+  <p> <%= link_to (@a_gossip.user.first_name), profile_path(@a_gossip.user.first_name)%> </p>
 
   <p>Lol astéroïde.</p>
 

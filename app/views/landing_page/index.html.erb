@@ -28,14 +28,26 @@
 
   <h1>The Motherfucking Gossip Project</h1>
   <p>Ceci est la page à propos de l'équipe qui a développé The Gossip Project. Yay !</p>
-  <p>Lol astéroïde.</p>
 
-<% Gossip.all.each do |gossip| %>
-  <h3><%= link_to (gossip.title), gossip_path(gossip.title) %></h3>
-  <p><%= gossip.content %></p>
-  <p><%= link_to (gossip.user.first_name), profile_path(gossip.user.first_name)%></p>
-  <p><%= gossip.created_at %></p>
-<% end %>
+  <div class="container">
+    <div class="row">
+      <% Gossip.all.each do |gossip| %>
+      <div class="card-deck m-3 text-center">
+        <div class="card" style="width: 19rem;">
+          <div class="card-body">
+            <h3 class="card-title"><%= gossip.title %></h3>
+            <h6 class="card-subtitle mb-2 text-muted"><%= gossip.created_at %></h6>
+            <p class="card-text"><%= gossip.content %></p>
+            <%= link_to (gossip.user.first_name), profile_path(gossip.user.first_name), class: "btn btn-primary mr-1"%>
+            <%= link_to ("Voir le potin"), gossip_path(gossip.title), class: "btn btn-primary ml-1"%>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      </div>
+    </div>
 
-</body>
-</html>
+
+
+  </body>
+  </html>

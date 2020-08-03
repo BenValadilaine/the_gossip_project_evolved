@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Accueil - The Gossip Project</title>
+  <title> <%= @author %> </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="/app/assets/stylesheets/application.css">
@@ -26,17 +26,9 @@
   </nav>
 
 
-  <h1>The Motherfucking Gossip Project</h1>
-  <p>Ceci est la page à propos de l'équipe qui a développé The Gossip Project. Yay !</p>
+  <h1> <%= @author %> profile </h1>
   <p>Lol astéroïde.</p>
 
-<% Gossip.all.each do |gossip| %>
-  <h3><%= gossip.title %></h3>
-  <p><%= gossip.content %></p>
-  <p><%= link_to gossip.user.first_name, author_id_path %></p>
-  <p><%= gossip.created_at %></p>
-<% end %>
 
 </body>
 </html>
-<%= link_to "clique ici", le_fameux_path %>

@@ -6,4 +6,5 @@ class StaticPagesController < ApplicationController
   def contact
     puts "Ceci est la page contact"
   end
+
 end

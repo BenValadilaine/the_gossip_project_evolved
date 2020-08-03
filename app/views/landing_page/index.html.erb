@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Accueil - The Gossip Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/app/assets/stylesheets/application.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <%= link_to "The Gossip Project", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "Team", team_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Contact", contact_path, class: "nav-link" %>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+  <h1>The Motherfucking Gossip Project</h1>
+  <p>Ceci est la page à propos de l'équipe qui a développé The Gossip Project. Yay !</p>
+  <p>Lol astéroïde.</p>
+
+  <h3> <%= @gossip[0].title %> </h3>
+  <p> <%= @gossip[0].content %> </p>
+  <p> <%= @users[0].first_name %> </p>
+
+
+</body>
+</html>

@@ -4,9 +4,14 @@
     <p class="lead">Plateforme de partage de potins générés aléatoirement pour l'instant.</p>
   </div>
 
-
+<div class="container align-items-center text-center mt=5 mb=5">
+<h4>Créer un Gossip</h4>
+<%= link_to "Nouveau gossip", new_gossip_path, class: "btn btn-primary mr-1"%>
+</div>
 
   <div class="container align-items-center text-center">
+  <hr>
+  <h3>Les potins déjà en ligne :</h3>
     <div class="row">
       <% Gossip.all.each do |gossip| %>
       <div class="card-deck m-3 text-center">

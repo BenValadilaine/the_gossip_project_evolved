@@ -15,6 +15,7 @@ end
 
   user.update(email:"#{user.first_name.downcase}.#{user.last_name.downcase}@protonmail.com")
 end
+User.create(first_name: "anonymous", last_name: "anonymous", city: "anonymous", email: "anonymous@anonymous.net")
 
 #Create 20 gossips
 20.times do

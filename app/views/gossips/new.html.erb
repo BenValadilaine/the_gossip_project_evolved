@@ -1,5 +1,5 @@
 <% if @error == true %>
-<div class="container mx-auto">
+<div class="container mx-auto mt-1">
   <div class="alert alert-danger mx-auto text-center " style= "width: 30rem;" role="alert">
     <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
     <ul style="list-style: none;">
@@ -13,7 +13,7 @@
 
 <div class="container text-center mt-5 mb-5" style="width: 30rem;">
 
-  <div class="container mx-auto" style="width: 30rem;">
+  <div class="container mx-auto text-center">
     <h4>Ajoute un gossip à la liste et devient le nouveau maître du monde ! </h4>
     <hr>
     <form action= <%= gossips_path %> method= "POST">

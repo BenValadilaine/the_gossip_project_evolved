@@ -10,7 +10,6 @@ class GossipsController < ApplicationController
   def create
     @gossip = Gossip.new(title: params[:gossip_title], content: params[:gossip_content], user: User.last)
     if @gossip.save
-      @error = false
       redirect_to :controller => "landing_page", :action => "index", :notice => "gossip_saved"
     else
       @error = true

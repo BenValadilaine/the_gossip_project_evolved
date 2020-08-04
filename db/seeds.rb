@@ -11,7 +11,7 @@ end
 
 #Create 10 users
 10.times do
-  user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Movies::VForVendetta.quote, age: rand(16..77), city: City.all.sample)
+  user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Movies::VForVendetta.quote, age: rand(16..77), city: City.all.sample, email: Faker::Internet.email)
 
   user.update(email:"#{user.first_name.downcase}.#{user.last_name.downcase}@protonmail.com")
 end

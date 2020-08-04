@@ -3,7 +3,8 @@
     <div class="container" style="width: 30rem;">
         <h4>Ajoute un gossip à la liste et devient le nouveau maître du monde ! </h4>
         <hr>
-        <form action= <%= gossip_path %> method= "POST">
+        <form action= <%= gossips_path %> method= "POST">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <div class="form-group">
                 <label>Titre du gossip</label>
                 <input type="text" name="gossip_title" class="form-control">
@@ -12,9 +13,7 @@
                 <label>Ton super gossip</label>
                 <input type="text" name= "gossip_content" class="form-control" >
             </div>
-            <input type="hidden" name= "authencity_token">
             <button type="submit" class="btn btn-primary">Créer</button>
         </form>
     </div>
-  
 </div>

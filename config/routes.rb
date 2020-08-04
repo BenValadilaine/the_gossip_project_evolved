@@ -4,6 +4,5 @@ Rails.application.routes.draw do
   root 'landing_page#index'
   get '/welcome/:name_id', to: 'landing_page#welcome'
   get '/profile/:profile', to: 'dynamic_pages#profile', as: 'profile'
-  resources :gossip
-  post '/gossip/new', to: 'gossip#create'
+  resources :gossips
 end

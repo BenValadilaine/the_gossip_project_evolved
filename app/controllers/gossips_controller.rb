@@ -33,4 +33,10 @@ class GossipsController < ApplicationController
     params.require(:gossip).permit(:title, :content)
   end
 
+  def destroy
+    @gossip = Gossip.find(params[:id])
+    @gossip.destroy
+    redirect_to :controller => "landing_page", :action => "index", :notice => "gossip_destroyed"
+  end
+
 end

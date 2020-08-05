@@ -19,47 +19,40 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
-
+    @comment = Comment.find(params[:id])
   end
 
   # POST /comments
   # POST /comments.json
   def create
     @comment = Comment.new
-    puts "*"*50
-    puts params
     @gossip = Gossip.find(params[:gossip_id])
-    puts "#"*50
-    puts @gossip
     @comment = Comment.create(content: params[:content], user: User.last, gossip: @gossip)
-    puts "-"*50
-    puts @comment
     redirect_to gossip_path(@gossip.id)
   end
 
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
-    respond_to do |format|
-      if @comment.update(comment_params)
-
-      else
-
-      end
-    end
+    puts "*"*50
+    puts params
+    puts "#"*50
+    puts comment_params
+    puts "fin du comment_params *************************************************************"
+    @comment = Comment.find(params[:id])
+    @comment.update(content: params[:content], user: User.last, gossip: @gossip)
+    redirect_to gossip_path(@gossip.id)
   end
 
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    @comment.destroy
-
-    puts "*"*50
-    puts params
-    puts "#"*50
-    puts @gossip
     @gossip = Gossip.find(params[:gossip_id])
-    redirect_to gossip_path(@gossip.id)
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      @comments = @gossip.comments
+      render 'gossips/show'
+    end
   end
 
   private
@@ -67,9 +60,5 @@ class CommentsController < ApplicationController
   def set_comment
     @comment = Comment.find(params[:id])
   end
-
-  # Only allow a list of trusted parameters through.
-  def comment_params
-    params.require(:comment).permit(:content)
-  end
+  
 end

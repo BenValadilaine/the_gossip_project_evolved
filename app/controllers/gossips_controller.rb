@@ -24,7 +24,6 @@ class GossipsController < ApplicationController
   end
 
   def update
-
     @gossip = Gossip.find(params[:id])
     @gossip.update(post_params)
     redirect_to gossip_path(@gossip)

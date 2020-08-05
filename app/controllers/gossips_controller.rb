@@ -5,7 +5,7 @@ class GossipsController < ApplicationController
   end
 
   def new
-    @gossip = Gossip.new
+    @gossip = Gossip.new()
   end
 
   def create
@@ -21,10 +21,10 @@ class GossipsController < ApplicationController
 
   def edit
     @gossip = Gossip.find(params[:id])
-  end 
+  end
 
   def update
-    
+
     @gossip = Gossip.find(params[:id])
     @gossip.update(post_params)
     redirect_to gossip_path(@gossip)

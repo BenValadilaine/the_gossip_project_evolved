@@ -34,14 +34,9 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
-    puts "*"*50
-    puts params
-    puts "#"*50
-    puts comment_params
-    puts "fin du comment_params *************************************************************"
     @comment = Comment.find(params[:id])
-    @comment.update(content: params[:content], user: User.last, gossip: @gossip)
-    redirect_to gossip_path(@gossip.id)
+    @comment.update(content: params[:content], user: User.last, gossip: Gossip.find(params[:gossip_id]))
+    redirect_to gossip_path(params[:gossip_id])
   end
 
   # DELETE /comments/1

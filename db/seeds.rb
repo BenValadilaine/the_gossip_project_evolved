@@ -40,3 +40,8 @@ end
 20.times do
   pm = PrivateMessage.create(content: Faker::Hacker.say_something_smart, sender: User.all.sample, recipient: User.all.sample)
 end
+
+#comments
+50.times do
+  cmt = Comment.create(content: Faker::Quote.singular_siegler, user: User.all.sample, gossip: Gossip.all.sample)
+end

@@ -19,6 +19,8 @@
   <div class="card" style="width: 19rem;">
     <div class="card-body">
       <h3 class="card-title">Commentaires</h3>
+      <p>Nombre de commentaires: <%= @gossip.comments.length %>
+      <hr>
       <% @gossip.comments.each do |comment| %>
       <p class="card-text"> <%= comment.content %></p>
       <small class="card-text text-end"> <%= comment.user.first_name %> <%= puts " " %> <%= comment.user.last_name %></small> </br>

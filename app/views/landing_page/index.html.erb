@@ -34,6 +34,8 @@
       <div class="card" style="width: 19rem;">
         <div class="card-body">
           <h3 class="card-title"><%= gossip.title %></h3>
+          <p>Nombre de commentaires: <%= gossip.comments.length %>
+          <hr>
           <h6 class="card-subtitle mb-2 text-muted"><%= gossip.created_at %></h6>
           <p class="card-text"><%= gossip.content %></p>
           <%= link_to (gossip.user.first_name), profile_path(gossip.user.first_name), class: "btn btn-primary mr-1"%>

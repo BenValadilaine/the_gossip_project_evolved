@@ -4,6 +4,9 @@ Tag.destroy_all
 City.destroy_all
 PrivateMessage.destroy_all
 JoinTableGossipTag.destroy_all
+Comment.destroy_all
+
+Faker::Config.locale="fr"
 
 10.times do
   City.create(name: Faker::Address.city, zip_code: Faker::Address.zip_code)

@@ -24,7 +24,7 @@
       <small class="card-text text-end"> <%= comment.user.first_name %> <%= puts " " %> <%= comment.user.last_name %></small> </br>
       <small class="card-text text-end"> <%= comment.created_at %></small> </br>
       <%= link_to "Editer", edit_gossip_comment_path(@gossip.id), class: "btn btn-secondary mr-1"%>
-      <%= link_to "Supprimer", edit_gossip_path(@gossip.id), class: "btn btn-danger mr-1"%>
+      <a href="/gossips/<%= @gossip.id %>/comments/<%= comment.id %>" class= "btn btn-danger mr-1" data-confirm ="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
 
       <hr>
       <% end %>

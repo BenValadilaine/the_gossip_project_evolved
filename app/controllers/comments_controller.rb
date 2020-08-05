@@ -54,16 +54,22 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
 
+    puts "*"*50
+    puts params
+    puts "#"*50
+    puts @gossip
+    @gossip = Gossip.find(params[:gossip_id])
+    redirect_to gossip_path(@gossip.id)
   end
-end
 
-private
-# Use callbacks to share common setup or constraints between actions.
-def set_comment
-  @comment = Comment.find(params[:id])
-end
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
-# Only allow a list of trusted parameters through.
-def comment_params
-  params.require(:comment).permit(:content)
+  # Only allow a list of trusted parameters through.
+  def comment_params
+    params.require(:comment).permit(:content)
+  end
 end

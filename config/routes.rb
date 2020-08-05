@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   root 'landing_page#index'
   get '/welcome/:name_id', to: 'landing_page#welcome'
-  get '/profile/:profile', to: 'dynamic_pages#profile', as: 'profile'
   resources :gossips
+  resources :profiles, only: [:show]
+  resources :cities, only: [:show]
 end

@@ -5,6 +5,7 @@
   <h4><%= @a_gossip.content %> </h4>
   <hr>
   <h5>Auteur: <%= link_to (@a_gossip.user.first_name), profile_path(@a_gossip.user.first_name)%> </h5>
+  <h5> City: <%= link_to (City.find(@a_gossip.user.city_id).name), city_path(City.find(@a_gossip.user.city_id).name)%> - <%= City.find(@a_gossip.user.city_id).zip_code %> </h5>
   <p><small>Publié le: <%= @a_gossip.created_at %></small> </p>
   <hr>
   <p>Lol astéroïde.</p>

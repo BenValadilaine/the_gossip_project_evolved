@@ -1,5 +1,7 @@
 class CitiesController < ApplicationController
     def show
-        @city = City.find_by(name: params[:id])
+        puts "$$$$$$$$$$$$$#{params}==============="
+        @city = City.find(params[:id])
+        puts "ssssssssssssssssss#{@city}sssssssssssssssssss"
     end 
 end

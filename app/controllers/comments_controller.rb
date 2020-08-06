@@ -46,7 +46,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.destroy
       @comments = @gossip.comments
-      render 'gossips/show'
+      redirect_to gossip_path(params[:gossip_id])
     end
   end
 
